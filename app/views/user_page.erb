@@ -1,0 +1,15 @@
+<div class="container">
+  <a href="/">Home</a>
+  <h4>WELCOME TO THE secrete USER PAGE <%= @user.first_name + " " + @user.last_name %></h4>
+  <hr>
+  <a href="/url"><h3>Create a shortened URL!</h3></a>
+  <hr>
+  <h5>Your URLs:</h5>
+  <% @url.each do |url| %>
+    <a href="http://#{url.original_url}"><%= url.key %></a>
+  <% end %>
+  <hr>
+  <form action="/logout" method="get">
+    <input type="submit" value="logout">
+  </form>
+</div>

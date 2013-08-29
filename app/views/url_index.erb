@@ -1,0 +1,12 @@
+<div class="container">
+  <a href="/log_in">Log in</a>
+  <a href="/create_user">Create user</a>
+  <a href="/url"><h3>Create a shortened URL!</h3></a>
+  <hr class="top" size="100">
+     <% @urls.each do |url| %>
+      <a href="<%="/url/#{url.key}"%>"><h4><%= url.key %></h4></a>
+      <p>count: <%= url.count %></p>
+      <p>original url: <%= url.original_url %></p>
+      <hr>
+  <% end %>
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+  <a href="/">Home</a>
+  <hr>
+  <h1>Create your user account!</h1>
+  <hr>
+  <% if @errors %>
+    <% @errors.each do |error, message| %>
+      <% message.each do |m| %>
+        <p><%= error %>: <%= m %></p>
+      <% end %>      
+    <% end %>
+  <% end %>
+  <br>
+  <form action="/create_user" method="post">
+    First Name:
+    <br>
+    <input type="text" name="user[first_name]" placeholder="Enter your first name">
+    <br><br>
+    Last Name:
+    <br>
+    <input type="text" name="user[last_name]" placeholder="Enter your last name">
+    <br><br>
+    Email:
+    <br>
+    <input type="text" name="user[email]" placeholder="Enter your email">
+    <br><br>
+    Password:
+    <br>
+    <input type="password" name="user[password]" placeholder="password">
+    <br><br>
+    <input type="submit" value="Create User">
+  </form>
+</div>
